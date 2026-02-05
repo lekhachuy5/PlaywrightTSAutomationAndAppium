@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "target": "ES6",
+    "module": "commonjs", // Change module option to CommonJS
+    "types": ["node"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/**/*.ts",
+    "src/generate-html-reports.ts",
+    "src/generate-excel-reports.ts",
+    "src/merge-json-reports.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

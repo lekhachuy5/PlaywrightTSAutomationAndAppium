@@ -1,0 +1,8 @@
+Site name
+{siteName}
+Notice title
+{noticeTitle}
+Notice description
+{noticeDescription}
+Notice body
+{noticeBody}

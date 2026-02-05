@@ -1,0 +1,49 @@
+{
+  "name": "auto-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run clean && del /q screenshots\\*.* && npx cucumber-js && npm run generate-reports && npm run generate-excel-report",
+    "test:acceptance": "npx cucumber-js --profile acceptance",
+    "test:smoke": "npx cucumber-js --profile smoke",
+    "test:scenario": "npx cucumber-js --name",
+    "test:profile": "npx cucumber-js --profile",
+    "test:documentCategory": "npx cucumber-js --profile documentCategory",
+    "generate-reports": "npx ts-node ./src/merge-json-reports.ts && node ./src/generate-html-reports.ts",
+    "generate-excel-report": "node ./src/generate-excel-reports.ts",
+    "clean": "npm run clean:screen && npm run clean:queries",
+    "clean:screen" : "del /q screenshots\\*.*",
+    "clean:queries" : "for /d %i in (queryResults\\*) do @if exist \"%i\" rmdir /s /q \"%i\""
+    },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.8.0",
+    "@playwright/test": "^1.44.1",
+    "@types/imap": "^0.8.40",
+    "@types/mailparser": "^3.4.4",
+    "@types/node": "^16.18.101",
+    "@wdio/appium-service": "^8.5.9",
+    "@wdio/cli": "^8.5.9",
+    "@wdio/globals": "^8.39.0",
+    "@wdio/local-runner": "^8.5.9",
+    "appium": "^2.11.1",
+    "appium-uiautomator2-driver": "^3.7.0",
+    "cucumber-tsflow": "^4.4.4",
+    "imap": "^0.8.19",
+    "mailparser": "^3.7.1",
+    "typescript": "^5.5.2",
+    "webdriverio": "^8.39.0"
+  },
+  "dependencies": {
+    "@types/pg": "^8.11.6",
+    "dotenv": "^16.4.5",
+    "moment-timezone": "^0.5.45",
+    "multiple-cucumber-html-reporter": "^3.6.2",
+    "pg": "^8.12.0",
+    "ts-node": "^10.9.2",
+    "xlsx": "^0.18.5"
+  }
+}

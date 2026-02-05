@@ -1,0 +1,14 @@
+Community
+{communityName}
+Venue
+{venueName}
+Reserved by
+{reservedBy}
+Date
+{date}
+Start Time: {startTime}
+End Time: {endTime}
+Description
+{description}
+Accept Terms of Use Policy?
+{acceptTerm}
